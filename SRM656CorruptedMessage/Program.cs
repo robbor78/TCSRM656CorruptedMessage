@@ -28,7 +28,7 @@ namespace SRM656CorruptedMessage
           counts.Add(c, 0);
         }
         counts[c]++;
-        if (length-counts[c] == k)
+        if (length - counts[c] == k)
         {
           maxCount = counts[c];
           maxC = c;
@@ -45,6 +45,32 @@ namespace SRM656CorruptedMessage
         }
       }
       return new string(maxC, length);
+
+    }
+
+    public String reconstructMessage2(String s, int k)
+    {
+      int length = s.Length;
+      var max = s.GroupBy(x => x)
+        .Select(grp => new { Char = grp.Key, Diff = length - grp.Count() })
+        .OrderBy(o => o.Diff)
+        .Where(w => w.Diff == k)
+        .FirstOrDefault();
+
+      char c = '.';
+      if (max == null)
+      {
+        c = 'a';
+        while (s.Contains(c))
+        {
+          c = (char)((int)c + 1);
+        }
+      }
+      else
+      {
+        c = max.Char;
+      }
+      return new string(c, s.Length);
 
     }
   }
