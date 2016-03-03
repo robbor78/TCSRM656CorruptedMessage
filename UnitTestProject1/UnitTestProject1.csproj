@@ -53,6 +53,12 @@
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SRM656CorruptedMessage\SRM656CorruptedMessage.csproj">
+      <Project>{b0cb1020-f311-421a-a342-f7cc6dcfe417}</Project>
+      <Name>SRM656CorruptedMessage</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
