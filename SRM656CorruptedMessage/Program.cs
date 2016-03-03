@@ -28,13 +28,22 @@ namespace SRM656CorruptedMessage
           counts.Add(c, 0);
         }
         counts[c]++;
-        if (counts[c] > maxCount)
+        if (length-counts[c] == k)
         {
           maxCount = counts[c];
           maxC = c;
+          break;
         }
       }
 
+      if (length - maxCount != k)
+      {
+        maxC = 'a';
+        while (counts.ContainsKey(maxC))
+        {
+          maxC = (char)((int)maxC + 1);
+        }
+      }
       return new string(maxC, length);
 
     }

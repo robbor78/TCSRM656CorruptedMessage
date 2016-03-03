@@ -10,13 +10,12 @@ namespace UnitTestProject1
     [TestMethod]
     public void TestMethod1()
     {
-
-      string[] allMessages = new string[] { "hello", "abc" };
-      int[] allK = new int[] { 3,3 };
-      string[] allCorrected = new string[] { "lllll","ddd" };
+      string[] allMessages = new string[] { "hello", "abc", "wwwwwwwwwwwwwwwwww", "ababba", "zoztxtoxytyt", "jlmnmiunaxzywed" };
+      int[] allK = new int[] { 3, 3, 0, 3, 10, 13 };
+      string[] allCorrected = new string[] { "lllll", "ddd", "wwwwwwwwwwwwwwwwww", "bbbbbb", "zzzzzzzzzzzz", "mmmmmmmmmmmmmmm" };
 
       int length = allMessages.Length;
-      for (int i = 0; i < length; i++)
+      for (int i = 3; i < length; i++)
       {
         Program p = new Program();
 
